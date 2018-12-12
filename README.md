@@ -10,9 +10,9 @@
 
 层次一(The first layer)	| 层次二(The second layer)
 ------ | ------
- - | 交通是否便利(traffic convenience)
+ | 交通是否便利(traffic convenience)
 位置(location) | 距离商圈远近(distance from business district)
- - | 是否容易寻找(easy to find)
+  | 是否容易寻找(easy to find)
  
 
 数据标注示例如下：
