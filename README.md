@@ -13,8 +13,8 @@
 层次一(The first layer)	| 层次二(The second layer)
 ------ | ------
 位置(location) | 交通是否便利(traffic convenience)
-位置(location) | 距离商圈远近(distance from business district)
-位置(location) | 是否容易寻找(easy to find)
+.. | 距离商圈远近(distance from business district)
+.. | 是否容易寻找(easy to find)
 .. | ..
 服务(service) | 
  
