@@ -30,3 +30,9 @@
     validation_*_char.py 生成验证结果，方便本地测试
     evaluate_char.py 评估本地验证集效果
     predict_*_char.py 生成提交结果文件
+
+## Reference
+
+- [keras lstm attention glove840b,lb 0.043][1]
+
+[1]: https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043
