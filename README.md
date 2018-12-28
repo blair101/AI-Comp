@@ -5,7 +5,7 @@ AI Challenger 2018 Sentiment Analysis with fastText
 功能描述
 ---
 
-本项目主要基于AI Challenger官方[baseline]
+AI Challenger
 
 处理流程，如数据读取、分词、特征提取、模型定义以及封装、模型训练、模型验证、模型存储以及模型预测等
 
