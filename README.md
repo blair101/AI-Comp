@@ -1,7 +1,5 @@
-AI Challenger 2018 Sentiment Analysis
+AI Challenger 2018 Sentiment Analysis 细粒度用户评论情感分析
 =========================================
-
-## AI-Challenger Baseline 细粒度用户评论情感分析
 
 在线评论的细粒度情感分析对于深刻理解商家和用户、挖掘用户情感等方面有至关重要的价值，主要用于个性化推荐、智能搜索、产品反馈、业务安全等。
 
