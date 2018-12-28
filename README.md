@@ -1,38 +1,34 @@
-## AI-Challenger Baseline 细粒度用户评论情感分析
+AI Challenger 2018 Sentiment Analysis Baseline with fastText
 
-在线评论的细粒度情感分析对于深刻挖掘用户情感等方面有至关重要的价值，可用于个性化推荐、智能搜索等。
+=========================================
 
-本次比赛我们提供了一个高质量的海量数据集，共包含6大类20个细粒度要素的情感倾向。
+功能描述
+---
+本项目主要基于AI Challenger官方[baseline](https://github.com/AIChallenger/AI_Challenger_2018/tree/master/Baselines/sentiment_analysis2018_baseline)修改了一个基于fastText的baseline，方便参赛者快速上手比赛，主要功能涵盖完成比赛的全流程，如数据读取、分词、特征提取、模型定义以及封装、
+模型训练、模型验证、模型存储以及模型预测等。baseline仅是一个简单的参考，希望参赛者能够充分发挥自己的想象，构建在该任务上更加强大的模型。
 
-### 数据说明
+开发环境
+---
+* 主要依赖工具包以及版本，详情见requirements.txt
 
-数据集分为训练、验证、测试A与测试B四部分。
+项目结构
+---
+* src/config.py 项目配置信息模块，主要包括文件读取或存储路径信息
+* src/util.py 数据处理模块，主要包括数据的读取以及处理等功能
+* src/main_train.py 模型训练模块，模型训练流程包括 数据读取、分词、特征提取、模型训练、模型验证、模型存储等步骤
+* src/main_predict.py 模型预测模块，模型预测流程包括 数据和模型的读取、分词、模型预测、预测结果存储等步骤
 
-数据集中的评价对象按照粒度不同划分为两个层次，层次一为粗粒度的评价对象. 评价对象的具体划分如下表所示。
 
-层次一(The first layer)	| 层次二(The second layer)
------- | ------
-位置(location) | 交通是否便利(traffic convenience)
-.. | 距离商圈远近(distance from business district)
-.. | 是否容易寻找(easy to find)
-.. | ..
-服务(service) | 
- 
+使用方法
+---
+* 准备 virtualenv -p python3 venv & source venv/bin/activate & pip install -r requirement.txt
+* 配置 在config.py中配置好文件存储路径
+* 训练 运行 python main_train.py -mn your_model_name 训练模型并保存，同时通过日志可以得到验证集的F1_score指标
+* 预测 运行 python main_predict.py -mn your_model_name 通过加载上一步的模型，在测试集上做预测
 
-数据标注示例如下：
+运行方法
+---
 
-> “味道不错的面馆，性价比也相当之高，分量很足～女生吃小份，胃口小的，可能吃不完呢。环境在面馆来说算是好的，至少看上去堂子很亮，也比较干净，一般苍蝇馆子还是比不上这个卫生状况的。中午饭点的时候，人很多，人行道上也是要坐满的，隔壁的冒菜馆子，据说是一家，有时候也会开放出来坐吃面的人。“
-
-### 文件说明
-
-    class_*.py 模型文件
-    model_*_char.py 训练文件
-    validation_*_char.py 生成验证结果，方便本地测试
-    evaluate_char.py 评估本地验证集效果
-    predict_*_char.py 生成提交结果文件
-
-## Reference
-
-- [keras lstm attention glove840b,lb 0.043][1]
-
-[1]: https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043
+```py
+python main_train.py -mn fasttext_wn2_model.pkl -wn 2
+```
