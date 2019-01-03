@@ -18,8 +18,27 @@ AI Challenger 2018 Sentiment Analysis 细粒度评论情感分析
 位置(location) | 距离商圈远近(distance from business district)
 位置(location) | 是否容易寻找(easy to find)
 .. | ..
-服务(service) |
-
+服务(service) | 排队等候时间(wait time)
+服务(service) | 服务人员态度(waiter’s attitude)
+服务(service) | 是否容易停车(parking convenience)
+服务(service) | 点菜/上菜速度(serving speed)
+.. | ..
+价格(price)	| 价格水平(price level)
+价格(price) | 性价比(cost-effective)
+价格(price) | 折扣力度(discount)
+.. | ..
+环境(environment)	| 装修情况(decoration) 
+环境(environment)	| 嘈杂情况(noise)
+环境(environment)	| 就餐空间(space)
+环境(environment)	| 卫生情况(cleaness)
+.. | ..
+菜品(dish) | 分量(portion)
+菜品(dish) | 口感(taste)
+菜品(dish) | 外观(look)
+菜品(dish) | 推荐程度(recommendation)
+.. | ..
+其他(others) | 本次消费感受(overall experience)
+其他(others) | 再次消费的意愿(willing to consume again)
 
 数据标注示例如下：
 
