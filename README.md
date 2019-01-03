@@ -13,7 +13,7 @@ AI Challenger 2018 Sentiment Analysis 细粒度评论情感分析
 数据集中的评价对象按照粒度不同划分为两个层次，层次一为粗粒度的评价对象. 评价对象的具体划分如下表所示。
 
 层次一(The first layer)	| 层次二(The second layer)
------- | ------
+:------: | :------:
 位置(location) | 交通是否便利(traffic convenience)
 位置(location) | 距离商圈远近(distance from business district)
 位置(location) | 是否容易寻找(easy to find)
@@ -44,7 +44,7 @@ AI Challenger 2018 Sentiment Analysis 细粒度评论情感分析
 每个细粒度要素的情感倾向有四种状态：正向、中性、负向、未提及。使用[1,0,-1,-2]四个值对情感倾向进行描述，情感倾向值及其含义对照表如下所示：
 
 情感倾向值(Sentimental labels）| 1	| 0 |	-1 | -2
------- | ------ | ------ | ------ | ------
+:------: | :------: | :------: | :------: | :------:
 含义（Meaning）| 正面情感(Positive)	| 中性情感(Neutral) | 负面情感（Negative）| 情感倾向未提及（Not mentioned）
 
 数据标注示例如下：
@@ -53,7 +53,7 @@ AI Challenger 2018 Sentiment Analysis 细粒度评论情感分析
 
 
 层次一(The first layer)	| 层次二(The second layer) | 标注 (Label)
------- | ------ | ------
+:------: | :------: | :------: 
 位置(location) | 交通是否便利(traffic convenience) | -2
 位置(location) | 距离商圈远近(distance from business district) | -2
 位置(location) | 是否容易寻找(easy to find) | -2
