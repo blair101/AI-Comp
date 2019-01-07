@@ -1,12 +1,15 @@
 from keras.backend.tensorflow_backend import set_session
 import tensorflow as tf
+
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
 import random
+
 random.seed = 42
 import pandas as pd
 from tensorflow import set_random_seed
+
 set_random_seed(42)
 from keras.preprocessing import text, sequence
 from keras.callbacks import ModelCheckpoint, Callback
@@ -62,8 +65,10 @@ maxlen = 1200
 max_features = 20000
 batch_size = 128
 epochs = 15
+
 tokenizer = text.Tokenizer(num_words=None)
 tokenizer.fit_on_texts(data["content"].values)
+
 with open('tokenizer_char.pickle', 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -396,5 +401,3 @@ del model20
 del history
 gc.collect()
 K.clear_session()
-
-
