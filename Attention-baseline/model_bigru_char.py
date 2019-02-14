@@ -11,6 +11,7 @@ import pandas as pd
 from tensorflow import set_random_seed
 
 set_random_seed(42)
+
 from keras.preprocessing import text, sequence
 from keras.callbacks import ModelCheckpoint, Callback
 from sklearn.metrics import f1_score, recall_score, precision_score
