@@ -1,9 +1,13 @@
 from keras.backend.tensorflow_backend import set_session
 import tensorflow as tf
 
+# config.gpu_options.allow_growth = True
+# GPU 动态申请显存，需要多少就申请多少
+
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
+
 import random
 
 random.seed = 42
@@ -14,10 +18,14 @@ set_random_seed(42)
 
 from keras.preprocessing import text, sequence
 from keras.callbacks import ModelCheckpoint, Callback
+
 from sklearn.metrics import f1_score, recall_score, precision_score
+
 from keras.layers import *
 from classifier_bigru import TextClassifier
+
 from gensim.models.keyedvectors import KeyedVectors
+
 import pickle
 import gc
 
@@ -73,10 +81,15 @@ tokenizer.fit_on_texts(data["content"].values)
 with open('tokenizer_char.pickle', 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
+# word_index 是 6W+ 么？
 word_index = tokenizer.word_index
+
+# word2vec : 7983 100 word2vec/chars.vector
 w2_model = KeyedVectors.load_word2vec_format("word2vec/chars.vector", binary=True, encoding='utf8',
                                              unicode_errors='ignore')
 embeddings_index = {}
+
+# 66347+1 * 100
 embeddings_matrix = np.zeros((len(word_index) + 1, w2_model.vector_size))
 word2idx = {"_PAD": 0}
 vocab_list = [(k, w2_model.wv[k]) for k, v in w2_model.wv.vocab.items()]
@@ -140,7 +153,7 @@ list_tokenized_validation = tokenizer.texts_to_sequences(X_validation)
 input_validation = sequence.pad_sequences(list_tokenized_validation, maxlen=maxlen)
 
 print("model1")
-model1 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
+model1 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)# maxlen = 1200
 file_path = model_dir + "model_ltc_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()

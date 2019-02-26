@@ -72,8 +72,10 @@ class TextClassifier():
         x_3 = Dropout(0.2)(x_3)
         x_3 = Conv1D(64, kernel_size=3, padding="valid", kernel_initializer="glorot_uniform")(x_3)
         x_3 = Dropout(0.2)(x_3)
+
         avg_pool_3 = GlobalAveragePooling1D()(x_3)
         max_pool_3 = GlobalMaxPooling1D()(x_3)
+
         attention_3 = attention(x_3)
         x = keras.layers.concatenate([avg_pool_3, max_pool_3, attention_3])
         x = Dense(num_class, activation="sigmoid")(x)
